@@ -1,20 +1,20 @@
 #include "EnemyManager.h"
-#include"NormalEnemy.h"
+#include"Enemy_A.h"
+#include<Dxlib.h>
+using namespace std;
+
 EnemyManager::EnemyManager()
 {
-	_list.emplace_back(std::make_shared<NormalEnemy>());
-	for (auto it =_list.begin(); it != _list.end(); ++it)
-	{
+	_list.emplace_back(make_shared<Enemy_A>());
+	
 
-		(*it)->Initialize();
-	}
 }
 
-bool EnemyManager::Update()
+bool EnemyManager::update()
 {
 	for (auto it = _list.begin(); it != _list.end();)
 	{
-		if ((*it)->Update() == false)
+		if ((*it)->update() == false)
 		{
 			it = _list.erase(it);
 		}
@@ -23,14 +23,16 @@ bool EnemyManager::Update()
 			it++;
 		}
 	}
+	
+
 	return true;
+
 }
 
-void EnemyManager::Draw()
+void  EnemyManager::draw()
 {
-	for (auto enemy = _list.begin(); enemy != _list.end(); ++enemy)
+	for (const auto enemy : _list)
 	{
-		(*enemy)->Draw();
-		
+		enemy->draw();
 	}
 }

@@ -1,42 +1,34 @@
 #include "GameScene.h"
-#include"NormalEnemy.h"
-#include"Player.h"
-#include<DxLib.h>
-#include"Background.h"
-#include"EnemyManager.h"
-using namespace std;
 
+Player player;
+
+Enemy_A enemyA;
+
+
+BackGround background;
 GameScene::GameScene()
 {
-	_player = make_shared<Player>();
-	_back = make_shared<Background>();
-	_normal = make_shared<NormalEnemy>();
-	_EnemyManager = make_shared<EnemyManager>();
-
-	_player->Initialize();
-	_normal->Initialize();
+	
 }
 
 void GameScene::update()
 {
-	
-	
 
-	_player->Update();
-
-	_EnemyManager->Update();
-	
+	player.update();
+	EA.update();
 	
 }
 
-void GameScene::draw()const
+void GameScene::draw()
 {
+	background.draw();
+
+
+	player.update();
+	EA.update();
+	player.draw();
+	EA.draw();
 	
-	_back->SetDraw();
-	_back->Draw();
-	_player->Draw();
-	_EnemyManager->Draw();
-	_back->DrawEnd();
-	
-	
+
+	background.drawback();
 }

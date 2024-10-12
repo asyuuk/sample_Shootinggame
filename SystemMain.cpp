@@ -1,22 +1,20 @@
 #include "SystemMain.h"
 #include<DxLib.h>
-#include"SceneClass.h"
-
-bool SystemMain::Initialize()const
+#include"GameScene.h"
+GameScene gamescene;
+SystemMain::SystemMain()
 {
-	SetAlwaysRunFlag(TRUE);
-	SetWindowSizeChangeEnableFlag(TRUE);
-	SetOutApplicationLogValidFlag(TRUE);
-	SetFullScreenResolutionMode(DX_FSRESOLUTIONMODE_DESKTOP);
-	SetWindowText("bulletshooting");
+	handle = std::make_unique<int>(0);
+}
+
+bool SystemMain::initialize()const
+{
 	ChangeWindowMode(TRUE);
-	
 	if (DxLib_Init())
 	{
 		return false;
 	}
-
-	SetDrawScreen(DX_SCREEN_BACK);
+	
 	return true;
 }
 
@@ -25,14 +23,14 @@ void SystemMain::finalize()const
 	DxLib_End();
 }
 
-void SystemMain::main()const 
+void SystemMain::main()const
 {
-	SceneClass sceneclass;
-	while ( !ScreenFlip() && !ProcessMessage() && !ClearDrawScreen() )
+	while (!ScreenFlip() && !ProcessMessage() && !ClearDrawScreen())
 	{
-		if ( !sceneclass.SceneLoop() )
-		{
-			break;
-		}
+		gamescene.update();
+		gamescene.draw();
 	}
 }
+
+
+

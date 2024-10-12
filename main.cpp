@@ -1,20 +1,22 @@
-#include<Dxlib.h>
+#include<DxLib.h>
 #include"SystemMain.h"
-#include<crtdbg.h>
+#include"GameScene.h"
+
+
+
+GameScene game;
+
+#define _CRTDBG_MAP_ALLOC
 
 int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 {
-	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
-	_CrtDumpMemoryLeaks();
-	//« « « « « « « «
-	//‚±‚±‚©‚çˆ—
-
-	SystemMain systemmain;
-	if (systemmain.Initialize())
+	SystemMain system;
+	if (system.initialize())
 	{
-		systemmain.main();
+		system.main();
 	}
 	
-	systemmain.finalize();
+	system.finalize();
+	
 	
 }

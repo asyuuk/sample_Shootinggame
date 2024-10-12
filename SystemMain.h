@@ -1,12 +1,15 @@
 #pragma once
+#include<memory>
 
-class SystemMain 
+class SystemMain final
 {
 public:
-	SystemMain() = default;
+	SystemMain();
 	~SystemMain() = default;
-	bool Initialize() const;
+	bool initialize()const;
 	void finalize() const;
-	void main()const;
+	void main()const ;
+private:
+	std::unique_ptr<int>handle;
 };
 
