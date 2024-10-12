@@ -7,7 +7,7 @@ BulletManager bulletmanagerEnemy_A;
 Enemy_A::Enemy_A() {
 	*_x = 400;
 	*_y = -50;
-	shotFlag = std::make_unique<bool>();
+	shotFlag = std::make_unique<bool>(false);
 	*pattern = 1;
 	*selection = 0;
 	

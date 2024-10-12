@@ -146,7 +146,10 @@
     <ClCompile Include="CircleShot.cpp" />
     <ClCompile Include="EnemyManager.cpp" />
     <ClCompile Include="Enemy_A.cpp" />
+    <ClCompile Include="Enemy_B.cpp" />
+    <ClCompile Include="Enemy_C.cpp" />
     <ClCompile Include="GameScene.cpp" />
+    <ClCompile Include="InitTowardShot.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MovePatternEnemys.cpp" />
     <ClCompile Include="Player.cpp" />
@@ -161,7 +164,10 @@
     <ClInclude Include="CircleShot.h" />
     <ClInclude Include="EnemyManager.h" />
     <ClInclude Include="Enemy_A.h" />
+    <ClInclude Include="Enemy_B.h" />
+    <ClInclude Include="Enemy_C.h" />
     <ClInclude Include="GameScene.h" />
+    <ClInclude Include="InitTowardShot.h" />
     <ClInclude Include="MovePatternEnemys.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="RandamShot.h" />

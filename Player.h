@@ -1,7 +1,11 @@
 #pragma once
 #include"Task.h"
 #include<memory>
+#include"Enemy_A.h"
+#include"Enemy_B.h"
 #include"CircleCollider.h"
+class Enemy_A;
+class Enemy_B;
 class CircleCollider;
 class Player :public Task
 {

@@ -1,9 +1,10 @@
 #include "GameScene.h"
-
+#include"Enemy_A.h"
+#include"Enemy_B.h"
 Player player;
 
-Enemy_A enemyA;
-
+Enemy_A EA;
+Enemy_B  EB;
 
 BackGround background;
 GameScene::GameScene()
@@ -14,8 +15,6 @@ GameScene::GameScene()
 void GameScene::update()
 {
 
-	player.update();
-	EA.update();
 	
 }
 
@@ -23,12 +22,12 @@ void GameScene::draw()
 {
 	background.draw();
 
-
+	EB.update();
 	player.update();
 	EA.update();
 	player.draw();
 	EA.draw();
-	
+	EB.draw();
 
 	background.drawback();
 }

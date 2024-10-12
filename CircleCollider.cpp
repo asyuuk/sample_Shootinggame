@@ -6,7 +6,8 @@
 #include<DxLib.h>
 #include<math.h>
 Player _player;
-Enemy_A  E;
+Enemy_A  EAc;
+Enemy_B EBc;
 RandamShot randomcollider;
 CircleShot circleshotcollider;
 
@@ -21,9 +22,16 @@ CircleCollider::CircleCollider()
 bool CircleCollider::Player_EnemyA_update()
 {
 	_player.update();
-	E.update();
-	return Colliders(_player.GetX(), _player.GetY(),E.GetX(), E.GetY());
+	EAc.update();
+	return Colliders(_player.GetX(), _player.GetY(),EAc.GetX(), EAc.GetY());
 	
+}
+
+bool  CircleCollider::Player_EnemyB_update()
+{
+	_player.update();
+	EBc.update();
+	return  Colliders(_player.GetX(), _player.GetY(), EBc.GetX(), EBc.GetY());
 }
 
 bool CircleCollider::Player_Bullet_update()

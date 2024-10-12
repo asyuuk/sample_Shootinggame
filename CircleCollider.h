@@ -1,11 +1,10 @@
 #pragma once
 
-#include"AbstractEnemy.h"
 #include<memory>
 #include"player.h"
 
 class Player;
-class AbstractEnemy;
+
 
 class CircleCollider
 {
@@ -18,6 +17,7 @@ public:
 	bool BulletCollider();
 	bool Player_EnemyA_update();
 	bool Player_Bullet_update();
+	bool Player_EnemyB_update();
 
 	bool Player_Bullet_update_Random();
 

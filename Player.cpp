@@ -1,7 +1,7 @@
 #include "Player.h"
 #include<DxLib.h>
-#include"lua.hpp"
-#include<iostream>
+
+
 
 CircleCollider PCol;
 Player::Player()
@@ -30,8 +30,8 @@ bool Player::update()
 void  Player::draw()
 {
 
-	*handle = LoadGraph("E:\\Aseprite\\bluearchiveyuuka.png");
-	if (PCol.Player_EnemyA_update()) {
+	*handle = LoadGraph("E:\\Aseprite\\chara0002.png");
+	if (PCol.Player_EnemyA_update()||PCol.Player_EnemyB_update()) {
 		DrawGraph(*_x, *_y, *handle, TRUE);
 	}
 	

@@ -1,13 +1,13 @@
 #include "AbstractEnemy.h"
 
 BulletManager bulletmanager;
-MovePatternEnemys MovePattern;
+
 AbstractEnemy::AbstractEnemy()
 {
 	_x = std::make_unique<float>(0);
 	_y = std::make_unique<float>(0);
 	handle = std::make_unique<int>(0);
-	visible = std::make_unique<bool>();
+	visible = std::make_unique<bool>(0);
 	count = std::make_unique<int>(0);
 	_angle1 = std::make_unique<float>(0);
 	_angle2 = std::make_unique<float>(0);

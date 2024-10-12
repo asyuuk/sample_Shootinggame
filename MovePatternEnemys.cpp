@@ -73,6 +73,15 @@ void MovePatternEnemys::MovePattern02(AbstractEnemy* enemy)
 		enemy->Setangle1(DX_PI * 1 / 4);
 		enemy->Setspeed(4);
 	}
+
+	if (100 == counter)
+	{
+		enemy->Setspeed(0);
+	}
+	if (130 == counter)
+	{
+		enemy->Setspeed(-2);
+	}
 }
 void MovePatternEnemys::MovePattern03(AbstractEnemy* enemy)
 {

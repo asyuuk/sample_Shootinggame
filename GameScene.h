@@ -1,7 +1,8 @@
 #pragma once
 #include"Player.h"
-#include"AbstractEnemy.h"
+
 #include"Enemy_A.h"
+#include"Enemy_B.h"
 #include"CircleCollider.h"
 #include"CircleShot.h"
 #include"BackGround.h"
@@ -13,7 +14,7 @@ public:
 	void update();
 	void draw();
 private:
-	Enemy_A EA;
+	
 
 };
 

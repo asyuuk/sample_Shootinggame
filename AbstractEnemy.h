@@ -1,18 +1,20 @@
 #pragma once
 #include"Task.h"
 #include<memory>
-#include"CircleCollider.h"
-#include"MovePatternEnemys.h"
+
 #include"BulletManager.h"
+
 class BulletManager;
-class MovePatternEnemys;
-class CircleCollider;
+
+
+
 class AbstractEnemy:public Task
 {
 public:
 	AbstractEnemy();
 	virtual ~AbstractEnemy() = default;
 	bool update()override;
+
 
 	float& GetX()
 	{
